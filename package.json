@@ -1,6 +1,6 @@
 {
   "name": "unique-temp-dir",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Provides a uniquely named temp directory.",
   "license": "MIT",
   "repository": "jamestalmage/unique-temp-dir",
