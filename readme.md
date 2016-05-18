@@ -1,4 +1,4 @@
-# unique-temp-dir [![Build Status](https://travis-ci.org/jamestalmage/unique-temp-dir.svg?branch=master)](https://travis-ci.org/jamestalmage/unique-temp-dir)
+# unique-temp-dir [![Build Status](https://travis-ci.org/avajs/unique-temp-dir.svg?branch=master)](https://travis-ci.org/avajs/unique-temp-dir)
 
 > Provides a uniquely named temp directory.
 
