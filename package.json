@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Provides a uniquely named temp directory.",
   "license": "MIT",
-  "repository": "jamestalmage/unique-temp-dir",
+  "repository": "avajs/unique-temp-dir",
   "author": {
     "name": "James Talmage",
     "email": "james@talmage.io",
@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
-    "xo": "^0.13.0"
+    "xo": "^0.15.1"
   }
 }

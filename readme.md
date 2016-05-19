@@ -1,6 +1,6 @@
-# unique-temp-dir [![Build Status](https://travis-ci.org/jamestalmage/unique-temp-dir.svg?branch=master)](https://travis-ci.org/jamestalmage/unique-temp-dir)
+# unique-temp-dir [![Build Status](https://travis-ci.org/avajs/unique-temp-dir.svg?branch=master)](https://travis-ci.org/avajs/unique-temp-dir)
 
-> Provides a uniquely named temp directory.
+> Provides a uniquely named temp directory
 
 
 ## Install
@@ -33,39 +33,40 @@ Returns a string that represents a unique directory inside the systems temp dire
 
 ##### create
 
-Type: `boolean`  
+Type: `boolean`<br>
 Default: `false`
 
 If `true`, the directory will be created synchronously before returning.
 
 ##### length
 
-Type: `number`  
+Type: `number`<br>
 Default: `20`
 
 The length of the directory name inside the temp directory.
 
 ##### thunk
 
-Type: `boolean`  
+Type: `boolean`<br>
 Default: `false`
 
 If true, returns a thunk function for `path.join(uniqueTempDir, ... additionalArgs)`. Useful for filling your directory up with stuff.
 
-```js                     
+```js
 const uniqueTempDir = require('unique-temp-dir');
 const tempDir = uniqueTempDir({thunk: true});
 
 tempDir()
-//=> /user/temp/uniqueId
+//=> '/user/temp/uniqueId'
 
 tempDir('foo')
-//=> /user/temp/uniqueId/foo
+//=> '/user/temp/uniqueId/foo'
 
 tempDir('bar')
-//=> /user/temp/uniqueId/bar
+//=> '/user/temp/uniqueId/bar'
 ```
+
 
 ## License
 
-MIT © [James Talmage](http://github.com/jamestalmage)
+MIT © [James Talmage](https://github.com/jamestalmage)

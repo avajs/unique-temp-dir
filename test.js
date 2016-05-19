@@ -1,13 +1,14 @@
-import test from 'ava';
-import fn from './';
-import osTmpdir from 'os-tmpdir';
 import path from 'path';
 import fs from 'fs';
-var tmpDir = osTmpdir();
+import test from 'ava';
+import osTmpdir from 'os-tmpdir';
+import fn from './';
+
+const tmpDir = osTmpdir();
 
 test(t => {
-	for (var i = 0; i < 100; i++) {
-		var result = fn();
+	for (let i = 0; i < 100; i++) {
+		const result = fn();
 		t.is(result.indexOf(tmpDir), 0);
 		t.true(result.length > tmpDir.length);
 	}
@@ -31,7 +32,6 @@ test('can be created', t => {
 
 test('can thunk', t => {
 	const uniqueDir = fn({thunk: true});
-
 	const base = uniqueDir();
 
 	t.is(uniqueDir('foo'), base + path.sep + 'foo');
