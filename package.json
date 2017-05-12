@@ -10,7 +10,7 @@
     "url": "github.com/jamestalmage"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -29,12 +29,12 @@
     "os"
   ],
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "os-tmpdir": "^1.0.1",
+    "make-dir": "^1.0.0",
+    "temp-dir": "^1.0.0",
     "uid2": "0.0.3"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
-    "xo": "^0.15.1"
+    "ava": "^0.19.1",
+    "xo": "^0.18.2"
   }
 }

@@ -1,16 +1,24 @@
 'use strict';
-var path = require('path');
-var osTmpdir = require('os-tmpdir');
-var uid2 = require('uid2');
-var mkdirp = require('mkdirp');
+const path = require('path');
+const uid2 = require('uid2');
+const tempDir = require('temp-dir');
+const makeDir = require('make-dir');
 
-module.exports = function (options) {
+function thunk(uniqueDir) {
+	return function () {
+		const args = Array.prototype.slice.call(arguments);
+		args.unshift(uniqueDir);
+		return path.join.apply(path, args);
+	};
+}
+
+module.exports = options => {
 	options = options || {};
 
-	var uniqueDir = path.join(osTmpdir(), uid2(options.length || 20));
+	const uniqueDir = path.join(tempDir, uid2(options.length || 20));
 
 	if (options.create) {
-		mkdirp.sync(uniqueDir);
+		makeDir.sync(uniqueDir);
 	}
 
 	if (options.thunk) {
@@ -19,11 +27,3 @@ module.exports = function (options) {
 
 	return uniqueDir;
 };
-
-function thunk(uniquedir) {
-	return function () {
-		var args = Array.prototype.slice.call(arguments);
-		args.unshift(uniquedir);
-		return path.join.apply(path, args);
-	};
-}

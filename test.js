@@ -1,25 +1,23 @@
 import path from 'path';
 import fs from 'fs';
 import test from 'ava';
-import osTmpdir from 'os-tmpdir';
-import fn from './';
-
-const tmpDir = osTmpdir();
+import tempDir from 'temp-dir';
+import fn from '.';
 
 test(t => {
 	for (let i = 0; i < 100; i++) {
 		const result = fn();
-		t.is(result.indexOf(tmpDir), 0);
-		t.true(result.length > tmpDir.length);
+		t.is(result.indexOf(tempDir), 0);
+		t.true(result.length > tempDir.length);
 	}
 });
 
 test('default length is 20', t => {
-	t.is(fn().length, (tmpDir + path.sep).length + 20);
+	t.is(fn().length, (tempDir + path.sep).length + 20);
 });
 
 test('can set custom length', t => {
-	t.is(fn({length: 10}).length, (tmpDir + path.sep).length + 10);
+	t.is(fn({length: 10}).length, (tempDir + path.sep).length + 10);
 });
 
 test('not created by default', t => {
