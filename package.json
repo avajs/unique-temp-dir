@@ -1,6 +1,6 @@
 {
   "name": "unique-temp-dir",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Provides a uniquely named temp directory.",
   "license": "MIT",
   "repository": "avajs/unique-temp-dir",
