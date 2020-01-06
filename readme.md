@@ -2,13 +2,11 @@
 
 > Provides a uniquely named temp directory
 
-
 ## Install
 
 ```
-$ npm install --save unique-temp-dir
+$ npm install unique-temp-dir
 ```
-
 
 ## Usage
 
@@ -22,32 +20,33 @@ uniqueTempDir();
 //=> '/var/folders/2_/zg9h6_xd4r3_z7c07s0cn8mw0000gn/T/qfqafhh1FJulehbCDAPk'
 ```
 
-
 ## API
 
-### uniqueTempDir([options])
+### uniqueTempDir(options?)
 
 Returns a string that represents a unique directory inside the systems temp directory.
 
 #### options
 
+Type: `object`
+
 ##### create
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `false`
 
 If `true`, the directory will be created synchronously before returning.
 
 ##### length
 
-Type: `number`<br>
+Type: `number`\
 Default: `20`
 
 The length of the directory name inside the temp directory.
 
 ##### thunk
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `false`
 
 If true, returns a thunk function for `path.join(uniqueTempDir, ... additionalArgs)`. Useful for filling your directory up with stuff.
@@ -65,8 +64,3 @@ tempDir('foo')
 tempDir('bar')
 //=> '/user/temp/uniqueId/bar'
 ```
-
-
-## License
-
-MIT © [James Talmage](https://github.com/jamestalmage)
